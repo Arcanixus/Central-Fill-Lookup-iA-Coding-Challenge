@@ -1,7 +1,5 @@
 # Central Fill Lookup - iA Coding Challenge
 
-Central Fill Lookup Coding Challenge for an SDE III Position at iA
-
 Please see the [wiki](https://github.com/Arcanixus/Central-Fill-Lookup-iA-Coding-Challenge/wiki) for this project for:
 
 * [The Original Problem Statement for this Challenge](https://github.com/Arcanixus/Central-Fill-Lookup-iA-Coding-Challenge/wiki/Original-Problem-Statement)
@@ -12,3 +10,6 @@ Please see the [wiki](https://github.com/Arcanixus/Central-Fill-Lookup-iA-Coding
 
 Author: Ethan Paoletti's                                                                                                                                              
 Challenge Date: 6/28/2023
+Prepared for: iA
+Position Interviewing for: SDE III
+
