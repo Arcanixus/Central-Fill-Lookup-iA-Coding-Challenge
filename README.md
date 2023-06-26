@@ -8,8 +8,11 @@ Please see the [wiki](https://github.com/Arcanixus/Central-Fill-Lookup-iA-Coding
 * [Summary Q&A's](https://github.com/Arcanixus/Central-Fill-Lookup-iA-Coding-Challenge/wiki/Summary-Q&A's)
 
 
-Author: Ethan Paoletti's                                                                                                                                              
+Author: Ethan Paoletti's
+
 Challenge Date: 6/28/2023
+
 Prepared for: iA
+
 Position Interviewing for: SDE III
 
