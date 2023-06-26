@@ -9,12 +9,9 @@ Please see the [wiki](https://github.com/Arcanixus/Central-Fill-Lookup-iA-Coding
 * [Build Procedures](https://github.com/Arcanixus/Central-Fill-Lookup-iA-Coding-Challenge/wiki/Build-Procedures)
 * [Runtime Procedures](https://github.com/Arcanixus/Central-Fill-Lookup-iA-Coding-Challenge/wiki/Runtime-Procedures)
 
-
-Author: Ethan Paoletti
-
-Challenge Date: 6/28/2023
-
-Prepared for: iA
-
-Position Interviewing for: SDE III
-
+```
+  Author: Ethan Paoletti 
+  Challenge Date: 6/28/2023
+  Prepared for: iA
+  Position Interviewing for: SDE III
+```
