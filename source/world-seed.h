@@ -5,20 +5,30 @@
 
 #include <map>
 
-enum class SeedID {
+enum class STATEIDS {
     NUMFACILITIES,
-    
+    MIDPRICEMEDA,
+    MIDPRICEMEDB,
+    MIDPRICEMEDC   
 };
 
 class WorldSeed 
 { 
   private:  
 
-    std::map<SeedID, int> m_seed;
+    std::map<STATEIDS, int> m_world_state;
+    int m_seed;
        
   public:      
-    WorldSeed(int override_value);      
+    WorldSeed(int override_seed = 0);      
     ~WorldSeed();
+    
+    int getSeed();
+    int getNumFacilities();
+    double getMidPriceMedA();
+    double getMidPriceMedB();
+    double getMidPriceMedC();
+
 };
 
 #endif

@@ -7,18 +7,26 @@
 #include <vector>
 #include <memory>
 #include "medication.h"
+#include "world-seed.h"
 
 class CentralFillFacility
 { 
   private:  
     std::string m_ID;
-    std::shared_ptr<std::vector<Medication>> m_inventory;
-       
+    std::shared_ptr<std::vector<std::shared_ptr<Medication>>> m_inventory;
+
   public:      
-    CentralFillFacility();      
+    CentralFillFacility(std::shared_ptr<WorldSeed> seed);      
     ~CentralFillFacility();
-    std::weak_ptr<std::vector<Medication>> getInventory();
-    std::weak_ptr<Medication> getCheapestMed();
+
+    std::string getID();
+    std::shared_ptr<std::vector<std::shared_ptr<Medication>>> getInventory();
+    std::shared_ptr<Medication> getCheapestMed();
+
+  private:
+
+   bool initInventory(std::shared_ptr<WorldSeed> seed);
+   std::string convertIntToID(int intID);
 };
 
 #endif
