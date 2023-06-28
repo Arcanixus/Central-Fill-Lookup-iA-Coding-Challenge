@@ -6,8 +6,7 @@ Please see the [wiki](https://github.com/Arcanixus/Central-Fill-Lookup-iA-Coding
 * [Project Design Controls](https://github.com/Arcanixus/Central-Fill-Lookup-iA-Coding-Challenge/wiki/Design-Controls)
 * [Assumptions Made](https://github.com/Arcanixus/Central-Fill-Lookup-iA-Coding-Challenge/wiki/Assumptions-Made-About-the-Challenge-Problem-Statement)
 * [Summary Q&A's](https://github.com/Arcanixus/Central-Fill-Lookup-iA-Coding-Challenge/wiki/Summary-Q&A's)
-* [Build Procedures](https://github.com/Arcanixus/Central-Fill-Lookup-iA-Coding-Challenge/wiki/Build-Procedures)
-* [Runtime Procedures](https://github.com/Arcanixus/Central-Fill-Lookup-iA-Coding-Challenge/wiki/Runtime-Procedures)
+* [Build & Running Procedures]([https://github.com/Arcanixus/Central-Fill-Lookup-iA-Coding-Challenge/wiki/Build-Procedures](https://github.com/Arcanixus/Central-Fill-Lookup-iA-Coding-Challenge/wiki/Build-&-Running-Procedures))
 
 ```
   Author: Ethan Paoletti 
