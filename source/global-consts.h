@@ -1,4 +1,15 @@
-// TODO: doc block
+/*****************************************
+ * File Name: global-consts.h
+ * 
+ * Description: File containing constant 
+ * data used throughout the program. This
+ * File allows data to be changed in one 
+ * place and ensures that the entire 
+ * program adheres to the same bounds.
+ * 
+ * Author: Ethan Paoletti
+ * Date: 6/28/2023 
+ * ***************************************/
 
 #ifndef GLOBAL_CONSTS_H
 #define GLOBAL_CONSTS_H

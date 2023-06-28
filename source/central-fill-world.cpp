@@ -1,3 +1,22 @@
+/*****************************************
+ * File Name: central-fill-world.cpp
+ *  
+ * Description: The implementation of the
+ * Central Fill world object. This 
+ * object is responsible for building a
+ * map of the 2D virtual Central Fill world.
+ * This object is also responsible for placing,
+ * and managing the Central Fill facilities 
+ * within the main virtual world map. Lastly,
+ * This object contains accessor functionality
+ * so that an outside program can access the 
+ * central fill facilities they are looking for.
+ * 
+ * Author: Ethan Paoletti
+ * Date: 6/28/2023 
+ * ***************************************/
+
+
 #include "central-fill-world.h"
 #include "global-consts.h"
 #include <iostream>
@@ -156,4 +175,3 @@ std::vector<std::tuple<int, std::map<constants::AXES, int>>> CentralFillWorld::c
 
     return locDists;
 }
-

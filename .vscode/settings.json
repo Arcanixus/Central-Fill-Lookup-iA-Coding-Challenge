@@ -48,6 +48,18 @@
         "xutility": "cpp",
         "sstream": "cpp",
         "strstream": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "iomanip": "cpp",
+        "random": "cpp",
+        "xlocmon": "cpp",
+        "xloctime": "cpp",
+        "functional": "cpp",
+        "list": "cpp",
+        "locale": "cpp",
+        "unordered_map": "cpp",
+        "xhash": "cpp",
+        "xlocbuf": "cpp",
+        "xlocmes": "cpp",
+        "regex": "cpp"
     }
 }

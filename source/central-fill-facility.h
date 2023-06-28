@@ -1,4 +1,18 @@
-// TODO: doc blocks
+/*****************************************
+ * File Name: central-fill-facility.h
+ *  
+ * Description: The header of the
+ * Central Fill facility object. This 
+ * object contains all of the actions and 
+ * data necessary to simulate a Central
+ * Fill facility to the requirements of 
+ * this program. This object is held in the 
+ * main world container and holds medication
+ * objects.
+ * 
+ * Author: Ethan Paoletti
+ * Date: 6/28/2023 
+ * ***************************************/
 
 #ifndef CENTRAL_FILL_FACILITY_H
 #define CENTRAL_FILL_FACILITY_H

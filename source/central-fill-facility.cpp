@@ -1,3 +1,19 @@
+/*****************************************
+ * File Name: central-fill-facility.cpp
+ *  
+ * Description: The implementation of the
+ * Central Fill facility object. This 
+ * object contains all of the actions and 
+ * data necessary to simulate a Central
+ * Fill facility to the requirements of 
+ * this program.This object is held in the 
+ * main world container and holds medication
+ * objects.
+ * 
+ * Author: Ethan Paoletti
+ * Date: 6/28/2023 
+ * ***************************************/
+
 #include "central-fill-facility.h"
 
 static int s_numFacilities = 1; 
@@ -73,8 +89,6 @@ std::shared_ptr<Medication> CentralFillFacility::getCheapestMed()
         std::shared_ptr<Medication> cheapestMed = m_inventory->at(0);
         for(unsigned int i = 1; i < m_inventory->size(); i++)
         {
-            // TODO check double compare corner cases here
-            // TODO determine what to do with meds that are equal
              if(m_inventory->at(i)->getPrice() < cheapestMed->getPrice())
              {
                 cheapestMed = m_inventory->at(i);
