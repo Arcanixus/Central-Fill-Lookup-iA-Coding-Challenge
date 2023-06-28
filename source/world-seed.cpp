@@ -19,7 +19,7 @@ WorldSeed::WorldSeed(int override_seed)
    srand(m_seed);
    
    // Now convert the raw int seed to world state seed data
-   m_world_state[STATEIDS::NUMFACILITIES] = rand() % int(constants::WORLD_SIZE * 0.75);
+   m_world_state[STATEIDS::NUMFACILITIES] = rand() % int(constants::WORLD_SIZE * 0.50);
 } 
 
 WorldSeed::~WorldSeed()
