@@ -1,15 +1,14 @@
 // TODO: doc blocks
 
+// TODO explain what this class was originally for.
+
 #ifndef WORLD_SEED_H
 #define WORLD_SEED_H
 
 #include <map>
 
 enum class STATEIDS {
-    NUMFACILITIES,
-    MIDPRICEMEDA,
-    MIDPRICEMEDB,
-    MIDPRICEMEDC   
+    NUMFACILITIES 
 };
 
 class WorldSeed 
@@ -25,10 +24,6 @@ class WorldSeed
     
     int getSeed();
     int getNumFacilities();
-    double getMidPriceMedA();
-    double getMidPriceMedB();
-    double getMidPriceMedC();
-
 };
 
 #endif

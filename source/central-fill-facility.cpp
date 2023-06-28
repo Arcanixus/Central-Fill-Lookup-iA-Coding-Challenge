@@ -9,8 +9,8 @@ CentralFillFacility::CentralFillFacility(std::shared_ptr<WorldSeed> seed)
     // Increase the number of facilities here so that the next facility 
     // is IDed properly
     s_numFacilities++;
-
-    initInventory(seed);
+    
+    if(!initInventory(seed)) throw (false);
 }     
 
 CentralFillFacility::~CentralFillFacility()
@@ -20,8 +20,21 @@ CentralFillFacility::~CentralFillFacility()
 
 bool CentralFillFacility::initInventory(std::shared_ptr<WorldSeed> seed)
 {
-   //std::vector<Medication>
-   return true; // TBD
+
+    std::vector<std::shared_ptr<Medication>> initInventory;
+    initInventory.push_back(std::make_shared<Medication>(constants::MEDNAME::A, seed));
+    initInventory.push_back(std::make_shared<Medication>(constants::MEDNAME::B, seed));
+    initInventory.push_back(std::make_shared<Medication>(constants::MEDNAME::C, seed));
+
+    m_inventory = std::make_shared<std::vector<std::shared_ptr<Medication>>>(initInventory);
+
+   if(nullptr == m_inventory)
+   {
+        std::cout << "Medication inventory was nullptr!" << std::endl;
+        return false;
+   }
+
+   return true;
 }
 
 std::string CentralFillFacility::convertIntToID(int intID)
@@ -70,6 +83,9 @@ std::shared_ptr<Medication> CentralFillFacility::getCheapestMed()
 
         return cheapestMed;
     }
-
-    return nullptr;
+    else
+    {
+        std::cout << "Medication inventory was nullptr!" << std::endl;
+        return nullptr;
+   }    
 }

@@ -20,9 +20,6 @@ WorldSeed::WorldSeed(int override_seed)
    
    // Now convert the raw int seed to world state seed data
    m_world_state[STATEIDS::NUMFACILITIES] = rand() % int(constants::WORLD_SIZE * 0.75);
-   m_world_state[STATEIDS::MIDPRICEMEDA] = rand() % (constants::MAX_WORLD_MED_PRICE + 1); // + 1 as this would be (N - 1) otherwise
-   m_world_state[STATEIDS::MIDPRICEMEDB] = rand() % (constants::MAX_WORLD_MED_PRICE + 1); // + 1 as this would be (N - 1) otherwise
-   m_world_state[STATEIDS::MIDPRICEMEDC] = rand() % (constants::MAX_WORLD_MED_PRICE + 1); // + 1 as this would be (N - 1) otherwise
 } 
 
 WorldSeed::~WorldSeed()
@@ -39,19 +36,3 @@ int WorldSeed::getNumFacilities()
 {
     return m_world_state[STATEIDS::NUMFACILITIES];
 }
-
-double WorldSeed::getMidPriceMedA()
-{
-    return static_cast<double>(m_world_state[STATEIDS::MIDPRICEMEDA]);
-}
-
-double WorldSeed::getMidPriceMedB()
-{
-    return static_cast<double>(m_world_state[STATEIDS::MIDPRICEMEDB]);
-}
-
-double WorldSeed::getMidPriceMedC()
-{
-    return static_cast<double>(m_world_state[STATEIDS::MIDPRICEMEDC]);
-}
-

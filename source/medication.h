@@ -4,6 +4,9 @@
 #define MEDICATION_H
 
 #include <memory>
+#include <string>
+#include <iostream>
+#include <random>
 #include "global-consts.h"
 #include "world-seed.h"
 
@@ -16,11 +19,13 @@ class Medication
 
        
   public:      
-    Medication(std::shared_ptr<WorldSeed> seed);      
+    Medication(constants::MEDNAME name, std::shared_ptr<WorldSeed> seed);      
     ~Medication();
 
     double getPrice();
+    void setName(constants::MEDNAME name);
     constants::MEDNAME getName();
+    std::string getNameAsString();
 };
 
 #endif

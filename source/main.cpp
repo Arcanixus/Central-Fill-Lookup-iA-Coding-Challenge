@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <sstream>
+#include <iomanip>
 #include "central-fill-world.h"
 #include "central-fill-facility.h"
 #include "global-consts.h"
@@ -56,9 +57,6 @@ int main()
           std::cout << "--------------------------------------------------------------------------------------------" << std::endl;
           std::cout << "Session seed is: " + std::to_string(seed->getSeed()) << std::endl;
           std::cout << "Num Central Fill Facilities: " + std::to_string(seed->getNumFacilities()) << std::endl;
-          std::cout << "Median World Price for Medication A: " + std::to_string(seed->getMidPriceMedA()) << std::endl;
-          std::cout << "Median World Price for Medication B: " + std::to_string(seed->getMidPriceMedB()) << std::endl;
-          std::cout << "Median World Price for Medication C: " + std::to_string(seed->getMidPriceMedC()) << std::endl;
           std::cout << "--------------------------------------------------------------------------------------------" << std::endl;
           std::cout << std::endl;
        }
@@ -131,6 +129,51 @@ int main()
         std::cout << "-------------------------------------------- 0 ---------------------------------------------" << std::endl;
 
  #endif // DEBUG
+
+    std::vector<std::tuple<int, std::shared_ptr<CentralFillFacility>>> closestFacilities = 
+                                                             world.getClosestCentralFillFacilitiesToLocation(userLoc[constants::AXES::X], 
+                                                                                                             userLoc[constants::AXES::Y], 
+                                                                                                             3);
+
+    if(nullptr != seed)
+    { 
+        std::cout << std::endl;
+        std::cout << "--------------------------------------------------------------------------------------------" << std::endl;
+        std::cout << "Closest Central Fill Facilities to (" << userLoc[constants::AXES::X] << ", " << userLoc[constants::AXES::Y] << ")" << std::endl;
+
+        for(int i=0; i < closestFacilities.size(); i++)
+        {
+            std::shared_ptr<CentralFillFacility> facility = std::get<1>(closestFacilities[i]);
+            int facilityDist = std::get<0>(closestFacilities[i]);
+
+            if(nullptr != facility)
+            {
+                std::shared_ptr<Medication> med = facility->getCheapestMed();
+
+                if(nullptr != med)
+                {
+
+                    std::cout << "Central Fill " << facility->getID() << " - " <<  std::setprecision(2) << std::fixed << med->getPrice() << 
+                                 ", Medication " << med->getNameAsString() << 
+                                 ", Distance "   << facilityDist << std::endl; // TBD distance
+
+                }
+                else
+                {
+                    std::cout << "Close Central Fill Facility Medication object was nullptr!" << std::endl;
+                    return 0;
+                }
+            }
+            else
+            {
+                std::cout << "Close Central Fill Facility object was nullptr!" << std::endl;
+                return 0;
+            }
+        }
+        
+        std::cout << "--------------------------------------------------------------------------------------------" << std::endl;
+        std::cout << std::endl;
+    }
 
     }
 

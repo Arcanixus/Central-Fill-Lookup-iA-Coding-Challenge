@@ -2,6 +2,9 @@
 #include "global-consts.h"
 #include <iostream>
 #include <vector>
+#include <tuple>
+#include <stdlib.h>
+#include <algorithm>
 
 CentralFillWorld::CentralFillWorld(std::shared_ptr<WorldSeed> seed)
 {
@@ -97,5 +100,60 @@ bool CentralFillWorld::isValidWorldLocation(int x, int y)
 std::shared_ptr<CentralFillFacility> CentralFillWorld::getCentralFillFacilityAtLocation(int x, int y)
 {
     return m_world[x][y];
+}
+
+std::vector<std::tuple<int, std::shared_ptr<CentralFillFacility>>> CentralFillWorld::getClosestCentralFillFacilitiesToLocation(int x, int y, int numFacilities)
+{
+    std::vector<std::tuple<int, std::shared_ptr<CentralFillFacility>>> closestFacilities;
+
+    std::vector<std::tuple<int, std::map<constants::AXES, int>>> locDists = calcAndSortWorldLocationDistancesToPoint(x, y);
+    
+    int i = 0;
+    do
+    {       
+        std::tuple<int, std::map<constants::AXES, int>> location = locDists[i];
+
+        int x2 = std::get<1>(location)[constants::AXES::X]; 
+        int y2 = std::get<1>(location)[constants::AXES::Y];
+        int dist = std::get<0>(location);
+
+        if(isValidWorldLocation(x2, y2) &&
+            isFacilityLocation(x2, y2))
+        {
+            closestFacilities.push_back(std::make_tuple(dist, getCentralFillFacilityAtLocation(x2, y2)));
+        }
+       
+        i++;
+    }
+    while(closestFacilities.size() != numFacilities);
+
+    return closestFacilities;
+}
+
+int CentralFillWorld::calcManhattanDistanceBetweenPoints(int x1, int y1, int x2, int y2)
+{
+    return abs(x1-x2) + abs(y1-y2);
+}
+
+std::vector<std::tuple<int, std::map<constants::AXES, int>>> CentralFillWorld::calcAndSortWorldLocationDistancesToPoint(int x1, int y1)
+{
+    std::vector<std::tuple<int, std::map<constants::AXES, int>>> locDists;
+
+    for(int x2 = constants::MIN_X_COORDINATE; x2 <= constants::MAX_X_COORDINATE; x2++)
+    {
+        for(int y2 = constants::MIN_Y_COORDINATE; y2 <= constants::MAX_Y_COORDINATE; y2++)
+        {
+            std::map<constants::AXES, int> location;
+
+            location[constants::AXES::X] = x2;
+            location[constants::AXES::Y] = y2;
+
+            locDists.push_back(std::make_tuple(calcManhattanDistanceBetweenPoints(x1, y1, x2, y2), location));
+        }
+    }
+
+    std::sort(locDists.begin(), locDists.end());
+
+    return locDists;
 }
 

@@ -33,6 +33,7 @@ namespace constants
     const int WORLD_SIZE = SIZE_X_AXIS * SIZE_Y_AXIS;
 
     const int MAX_WORLD_MED_PRICE = 1000;
+    const double MIN_WORLD_MED_PRICE = 0.01;
 }
 
 #endif
